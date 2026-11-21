@@ -329,7 +329,7 @@ body {
 
 .home-layout {
     display: grid;
-    grid-template-columns: 650px minimax (0,1fr);
+    grid-template-columns: 650px minmax (0,1fr);
     gap: 30px;
     align-items: start;
 }
@@ -742,21 +742,51 @@ body {
 }
 
 /*PC*/
-@media screen and (min-width:768px) and (max-width:1600px) {
-     /* NAVBAR */
-    html,body {
+@media screen and (min-width: 768px) and (max-width: 1600px) {
+
+    html, body {
         width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
         margin: 0;
         padding: 0;
-        overflow: hidden;
-     }
-     .categories {
-        width: 100%;
-        max-width: 1400px;
+    }
+
+    .home-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .popular-dishes,
+    .special-offers {
+        min-width: 0;
         margin: 0;
-        padding: 0;
-     }
-     
+    }
+
+    .dishes-container,
+    .dish-card {
+        width: 100%;
+    }
+
+    .title3 {
+        margin-left: 0;
+        font-size: 40px;
+    }
+
+    .offer-container {
+        margin: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .offer-card {
+        width: 100%;
+    }
+
+    .category-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-card,
+    .category-image {
+        width: 100%;
+    }
 }
